@@ -1,0 +1,9 @@
+.img-circle {
+    border-radius: 50%;
+    width: 80px;
+}
+
+.card-text {
+    display: flex;
+    justify-content: space-between; 
+}

@@ -1,0 +1,287 @@
+/*
+Colours
+*/
+:root {
+  --primary-blue: #2696F7;
+  --primary-black: #000000;
+  --primary-lGrey: #FCFCFC;
+  --primary-white: #FFFFFF;
+  --secondary-red: #BA3030;
+  --secondary-dGrey: #333333;
+  --btn-min-width: 195px;
+  --form-min-width: 300px;
+  font-family: Graphik;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+/*
+form breadcrumbs
+*/
+.form-breadcrumbs {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+}
+.form-inactive {
+  font-weight: bold;
+}
+
+.form-active {
+  font-weight: bold;
+  border-bottom: 5px solid var(--primary-blue)
+}
+
+/*
+Fonts
+*/
+
+/* regular */
+@font-face {
+  font-family: Graphik;
+  src: url("./assets/fonts/Graphik-Regular.ttf") format("ttf");
+  font-weight: normal;
+}
+
+/* bold */
+@font-face {
+  font-family: Graphik;
+  src: url("./assets/fonts/Graphik-Bold.ttf") format("ttf");
+  font-weight: bold;
+}
+
+/* light */
+@font-face {
+  font-family: Graphik Light;
+  src: url("./assets/fonts/Graphik-Light.ttf") format("ttf");
+}
+
+/* extra light */
+@font-face {
+  font-family: Graphik ExtraLight;
+  src: url("./assets/fonts/Graphik-Extralight.ttf") format("ttf");
+}
+
+/* thin */
+@font-face {
+  font-family: Graphik Thin;
+  src: url("./assets/fonts/Graphik-Thin.ttf") format("ttf");
+}
+
+/*
+Colours
+*/
+
+.blue {
+  color: var(--primary-blue) !important;
+}
+
+.black {
+  color: var(--primary-black) !important;
+}
+
+.lGrey {
+  color: var(--primary-lGrey) !important;
+}
+
+.white {
+  color: var(--primary-white) !important;
+}
+
+.red {
+  color: var(--secondary-red) !important;
+}
+
+.dGrey {
+  color: var(--secondary-dGrey) !important;
+}
+
+/*
+BG Colours
+*/
+
+.bg-blue {
+  background-color: var(--primary-blue) !important;
+}
+
+.bg-black {
+  background-color: var(--primary-black) !important;
+}
+
+.bg-lGrey {
+  background-color: var(--primary-lGrey) !important;
+}
+
+.bg-white {
+  background-color: var(--primary-white) !important;
+}
+
+.bg-red {
+  background-color: var(--secondary-red) !important;
+}
+
+.bg-dGrey {
+  background-color: var(--secondary-dGrey) !important;
+}
+
+
+/*
+Element modification (browser default ugliness)
+*/
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: var(--primary-white);
+  margin: 0;
+  height: 100%
+}
+
+section {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+/*
+*   helpers/general
+*/
+
+.content {
+  padding: 0px 20px;
+}
+
+.hr-25 {
+  width: 40%;
+  left: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin-top: 10px;
+  border: 1px solid black !important;
+}
+
+.hr-blue {
+  width: 50px;
+  left: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border: 3px solid var(--primary-blue) !important;
+}
+
+.hr-black {
+  width: 50px;
+  left: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border: 3px solid var(--primary-black) !important;
+}
+
+.contactPlane {
+  width: 100%;
+}
+
+#landing {
+  height: 57vh;
+}
+
+.container {
+  height: 100vh;
+}
+
+/* bootstrap helper addon  */
+
+.m-05 {
+  margin: 0.5rem;
+}
+
+.p-05 {
+  padding: 0.5rem;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+/*
+Generic Form styles
+*/
+.justify-content-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.manditory {
+  color: red;
+}
+
+/*
+Header
+*/
+
+.navbar-link {
+  font-family: Graphik;
+  color: var(--primary-black);
+  font-weight: normal;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity .3s ease-in;
+  -moz-transition: opacity .3s ease-in;
+  -webkit-transition: opacity .3s ease-in;
+  -o-transition: opacity .3s ease-in;
+}
+
+.navbar-link:hover {
+  opacity: 1;
+  color: var(--primary-black);
+  text-decoration: none;
+}
+
+#header {
+  box-shadow: 0 4px 5px 0px #efefef;
+}
+
+/*
+Footer
+*/
+#footer {
+  display: none;
+  overflow: hidden;
+  background: rgba(239, 239, 239,0.5);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-logo {
+    opacity: 0.5;
+}
