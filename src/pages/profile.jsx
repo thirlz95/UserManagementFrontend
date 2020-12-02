@@ -5,7 +5,7 @@ import { Container, Row, Col, FormGroup, Form } from 'react-bootstrap';
 import placeholder from '../assets/placeholder-person.jpeg';
 import Spinner from '../components/spinner/spinner';
 import PersonInfo from '../components/cards/PersonInfo';
-import SkillCard from '../components/cards/skillCard';
+import CommentBox from '../components/forms/commentBox';
 import Textarea from 'react-textarea-autosize';
 import BtnBlue from '../components/buttons/BtnBlue';
 import BtnBlueOutlined from '../components/buttons/BtnBlueOutlined';
@@ -25,7 +25,6 @@ class Profile extends Component {
 
   componentDidMount = async () => {
     const jwt = await localStorage.getItem('x-auth-token');
-
     axios
       .get('http://localhost:5000/api/auth', {
         headers: {
@@ -92,6 +91,25 @@ class Profile extends Component {
     });
   };
 
+  makeComment = async comment => {
+    // handles child components for entering within the form
+    const jwt = await localStorage.getItem('x-auth-token');
+    const _id = await localStorage.getItem('_id');
+
+    const res = await axios.post(
+      `http://localhost:5000/api/comments/${_id}`,
+      {
+        comment
+      },
+      {
+        headers: {
+          'x-auth-token': jwt //the token is a variable which holds the token
+        }
+      }
+    );
+    console.log('COMMENT RESPONSE', res);
+  };
+
   render() {
     const { person, loading, updateBio, edited } = this.state;
     return (
@@ -149,6 +167,7 @@ class Profile extends Component {
               </Container>
             </FormGroup>
           </Col>
+          <CommentBox makeComment={this.makeComment} placeholder="leave a comment about this person" name="comment" description="Add a new comment"/>
         </Row>
       </Container>
     );
